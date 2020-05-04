@@ -1,9 +1,4 @@
-provider "openstack" {
-}
-
-variable "user"{
-}
-
+#resource to generate random passowrd for user
 resource "random_password" "password" {
   length           = 8
   min_upper        = 1
@@ -11,8 +6,4 @@ resource "random_password" "password" {
   min_special      = 1
   special          = true
   override_special = "!#$%&"
-}
-
-output "cred_details" {
-  value = "Hi ${var.user}, your password is ${random_password.password.result}"
 }
