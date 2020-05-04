@@ -1,8 +1,6 @@
 provider "openstack" {
 }
 
-
-
 variable "user"{
 }
 
@@ -14,8 +12,7 @@ resource "random_password" "password" {
   special          = true
   override_special = "!#$%&"
 }
+
 output "cred_details" {
   value = "Hi ${var.user}, your password ${random_password.password.result}"
-
 }
-
