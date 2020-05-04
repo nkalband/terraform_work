@@ -14,5 +14,5 @@ resource "random_password" "password" {
 }
 
 output "cred_details" {
-  value = "Hi ${var.user}, your password ${random_password.password.result}"
+  value = "Hi ${var.user}, your password is ${random_password.password.result}"
 }
